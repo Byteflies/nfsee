@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "nfsee"
+version = "0.1.0"
+description = ""
+authors = ["Simon Wydooghe <simon@wydooghe.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.5"
+nfcpy = "^1.0.4"
+
+[tool.poetry.scripts]
+nfsee = "nfsee:nfsee"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
