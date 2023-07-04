@@ -22,7 +22,7 @@ with nfc.ContactlessFrontend('usb') as clf:
             rdwr={
                 "targets": ["106A"],
                 "on-connect": on_connect,
-                "beep-on-connect": False,
+                "beep-on-connect": True,
             },
         )
         if not connect:
