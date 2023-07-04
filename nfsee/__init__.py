@@ -3,14 +3,14 @@
 import nfc
 
 def on_connect(tag):
-    print(f"Tag activated")
+    print(f"Tag activated", end="")
 
     if tag.ndef is None:
-        print("No NDEF message found")
+        print(", no NDEF message found")
     else:
-        print("Records:")
+        print(", records:")
         for record in tag.ndef.records:
-            print(f"{record.type}: {record.data.decode()}")
+            print(f"- {record.type}: {record.data.decode()}")
     print()
     return True
 
