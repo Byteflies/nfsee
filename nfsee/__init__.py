@@ -14,16 +14,20 @@ def on_connect(tag):
     print()
     return True
 
-print("Opening contactless USB reader")
-with nfc.ContactlessFrontend('usb') as clf:
-    print("Contactless USB reader opened, waiting for tag activation\n")
-    while True:
-        connect = clf.connect(
-            rdwr={
-                "targets": ["106A"],
-                "on-connect": on_connect,
-                "beep-on-connect": True,
-            },
-        )
-        if not connect:
-            break
+def main():
+    print("Opening contactless USB reader")
+    with nfc.ContactlessFrontend('usb') as clf:
+        print("Contactless USB reader opened, waiting for tag activation\n")
+        while True:
+            connect = clf.connect(
+                rdwr={
+                    "targets": ["106A"],
+                    "on-connect": on_connect,
+                    "beep-on-connect": True,
+                },
+            )
+            if not connect:
+                break
+
+if __name__ == "__main__":
+    main()

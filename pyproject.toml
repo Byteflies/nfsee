@@ -10,7 +10,7 @@ python = "^3.5"
 nfcpy = "^1.0.4"
 
 [tool.poetry.scripts]
-nfsee = "nfsee:nfsee"
+nfsee = "nfsee:main"
 
 [build-system]
 requires = ["poetry-core"]
